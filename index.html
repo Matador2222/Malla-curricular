@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malla Curricular</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="franja-superior"></div>
+  <div class="encabezado-logo">
+     <img src="imagenes/logo-umayor.png" alt="Universidad Mayor" class="logo-umayor">
+  </div>
+  <div class="franja-inferior">
+    <div class="contenedor-carrera">
+      <label for="carrera">Selecciona una carrera:</label>
+      <select id="carrera" onchange="mostrarMalla()">
+        <option value="">-- Selecciona --</option>
+        <option value="informatica">Ing. Civil en Informática</option>
+        <option value="industrial">Ing. Civil Industrial</option>
+      </select>
+    </div>
+  </div>
+  
+
+  <h2 id="titulo-carrera" class="titulo-carrera"></h2>
+  <div id="malla-container"></div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

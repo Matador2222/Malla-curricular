@@ -69,7 +69,7 @@ body {
   margin-top: 20px;
   margin-bottom: 10px;
   color: #4a4a4a;
-  display: none; /* así empieza oculto */
+  display: none;
 }
 
 .semestre-titulo {

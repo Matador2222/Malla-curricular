@@ -93,20 +93,20 @@ function mostrarMalla() {
   }
   
 
-  // Crear columnas por semestre
+  
   for (let i = 1; i <= 11; i++) {
-    // Contenedor de la columna del semestre
+    
     const columna = document.createElement("div");
     columna.className = "columna-semestre";
     columna.style.gridColumn = i;
   
-    // Título del semestre
+    
     const titulo = document.createElement("div");
     titulo.className = "semestre-titulo";
     titulo.textContent = `Semestre ${i}`;
     columna.appendChild(titulo);
   
-    // Asignaturas del semestre
+    
     asignaturas
       .filter(r => r.semestre === i)
       .forEach(asignatura => {
@@ -117,20 +117,20 @@ function mostrarMalla() {
         columna.appendChild(div);
       });
   
-    // Agregar la columna al contenedor general
+    
     contenedor.appendChild(columna);
   }
 }
 function mostrarPrerrequisitos(asignatura, elemento) {
-  // Limpiar colores anteriores
+  
   document.querySelectorAll(".tarjeta").forEach(el => {
     el.classList.remove("verde", "rojo");
   });
 
-  // Marcar la seleccionada en verde
+  
   elemento.classList.add("verde");
 
-  // Buscar y marcar prerrequisitos
+  
   const prerreqs = asignatura.prerrequisitos || [];
   prerreqs.forEach(nombre => {
     document.querySelectorAll(".tarjeta").forEach(el => {

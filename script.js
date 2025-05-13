@@ -63,11 +63,13 @@ const mallaInformatica = [
 ];
 
 const mallaIndustrial = [
-  { nombre: "Química aplicada a la ingeniería", semestre: 1, prerrequisitos: [] },
-  { nombre: "Álgebra", semestre: 1, prerrequisitos: [] },
-  { nombre: "Cálculo", semestre: 2, prerrequisitos: ["Álgebra"] },
-  { nombre: "Gestión del talento humano", semestre: 4, prerrequisitos: [] },
-  { nombre: "Investigación de operaciones", semestre: 5, prerrequisitos: ["Cálculo"] }
+
+{ nombre: "Proyecto cornerstone", semestre: 1, prerrequisitos: [] },
+{ nombre: "Pensamiento computacional", semestre: 1, prerrequisitos: [] },
+{ nombre: "Introducción a la administración de proyectos", semestre: 1, prerrequisitos: [] },
+{ nombre: "Álgebra", semestre: 1, prerrequisitos: [] },
+{ nombre: "Química aplicada a la ingeniería", semestre: 1, prerrequisitos: [] },
+{ nombre: "Creatividad e innovación", semestre: 2,prerrequisitos: [] },
 ];
 
 function mostrarMalla() 

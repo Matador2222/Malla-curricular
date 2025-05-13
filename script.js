@@ -84,10 +84,10 @@ if (icono && tooltip) {
   icono.onclick = () => {
   const estaVisible = tooltip.style.display === "block";
 
-  // Alternar visibilidad del tooltip
+  
   tooltip.style.display = estaVisible ? "none" : "block";
 
-  // Si se acaba de abrir, hacer scroll hacia el panel
+  
   if (!estaVisible) {
     const detalle = document.getElementById("detalle-asignatura");
     if (detalle && detalle.style.display === "block") {

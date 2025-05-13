@@ -82,8 +82,20 @@ const tooltip = document.getElementById("tooltip-info");
 
 if (icono && tooltip) {
   icono.onclick = () => {
-    tooltip.style.display = (tooltip.style.display === "none" || tooltip.style.display === "") ? "block" : "none";
-  };
+  const estaVisible = tooltip.style.display === "block";
+
+  // Alternar visibilidad del tooltip
+  tooltip.style.display = estaVisible ? "none" : "block";
+
+  // Si se acaba de abrir, hacer scroll hacia el panel
+  if (!estaVisible) {
+    const detalle = document.getElementById("detalle-asignatura");
+    if (detalle && detalle.style.display === "block") {
+      detalle.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+};
+
 }
 
   let asignaturas = [];
@@ -146,7 +158,8 @@ if (icono && tooltip) {
 
 }
 
-function mostrarPrerrequisitos(asignatura, elemento) {
+function mostrarPrerrequisitos(asignatura, elemento) 
+{
   
   document.querySelectorAll(".tarjeta").forEach(el => {
     el.classList.remove("verde", "rojo");
@@ -172,6 +185,11 @@ function mostrarPrerrequisitos(asignatura, elemento) {
         <h3>${asignatura.nombre}</h3>
         <p>${asignatura.descripcion || "Descripción:"}</p>
         `;
+
+  document.getElementById("detalle-asignatura").scrollIntoView({
+  behavior: "smooth"
+  
+});
 
 
 }

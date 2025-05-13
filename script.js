@@ -3,7 +3,7 @@ const mallaInformatica = [
   { nombre: "Proyecto Cornerstone", semestre: 1, prerrequisitos: [] },
   { nombre: "Pensamiento Computacional", semestre: 1, prerrequisitos: [] },
   { nombre: "Introducción a la administración de proyectos", semestre: 1, prerrequisitos: [] },
-  { nombre: "Álgebra", semestre: 1, prerrequisitos: [] },
+  { nombre: "Álgebra", semestre: 1, prerrequisitos: [], descripcion: "Curso base que introduce operaciones algebraicas y resolución de ecuaciones." },
   { nombre: "Química Aplicada a la Ingeniería", semestre: 1, prerrequisitos: [] },
   { nombre: "Creatividad e Innovación", semestre: 2, prerrequisitos: [] },
   { nombre: "Programación Aplicada en Análisis de Datos", semestre: 2, prerrequisitos: [] },
@@ -70,11 +70,21 @@ const mallaIndustrial = [
   { nombre: "Investigación de operaciones", semestre: 5, prerrequisitos: ["Cálculo"] }
 ];
 
-function mostrarMalla() {
+function mostrarMalla() 
+{
   const carrera = document.getElementById("carrera").value;
   const contenedor = document.getElementById("malla-container");
   const titulo = document.getElementById("titulo-carrera");
   contenedor.innerHTML = "";
+
+const icono = document.getElementById("info-icono");
+const tooltip = document.getElementById("tooltip-info");
+
+if (icono && tooltip) {
+  icono.onclick = () => {
+    tooltip.style.display = (tooltip.style.display === "none" || tooltip.style.display === "") ? "block" : "none";
+  };
+}
 
   let asignaturas = [];
 
@@ -89,12 +99,19 @@ function mostrarMalla() {
   } else {
     titulo.textContent = "";
     titulo.style.display = "none";
+
+    contenedor.innerHTML = "";
+
+    const detalle = document.getElementById("detalle-asignatura");
+    detalle.style.display = "none";
+    detalle.innerHTML = "";
     return;
   }
   
 
   
-  for (let i = 1; i <= 11; i++) {
+  for (let i = 1; i <= 11; i++) 
+  {
     
     const columna = document.createElement("div");
     columna.className = "columna-semestre";
@@ -114,13 +131,21 @@ function mostrarMalla() {
         div.className = `tarjeta`;
         div.textContent = asignatura.nombre;
         div.onclick = () => mostrarPrerrequisitos(asignatura, div);
+
         columna.appendChild(div);
+
       });
   
     
     contenedor.appendChild(columna);
   }
+
+    const detalle = document.getElementById("detalle-asignatura");
+    detalle.style.display = "none";
+    detalle.innerHTML = "";
+
 }
+
 function mostrarPrerrequisitos(asignatura, elemento) {
   
   document.querySelectorAll(".tarjeta").forEach(el => {
@@ -140,4 +165,14 @@ function mostrarPrerrequisitos(asignatura, elemento) {
     });
   });
 
+  const detalle = document.getElementById("detalle-asignatura");
+
+        detalle.style.display = "block";
+        detalle.innerHTML = `
+        <h3>${asignatura.nombre}</h3>
+        <p>${asignatura.descripcion || "Descripción:"}</p>
+        `;
+
+
 }
+

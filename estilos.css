@@ -117,3 +117,25 @@ body {
   gap: 10px;
   min-height: 550px; /
 }
+
+.detalle-asignatura {
+  display: none;
+  margin-top: 20px;
+  padding: 15px;
+  border-top: 2px solid #ccc;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  max-width: 800px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.detalle-asignatura h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.detalle-asignatura p {
+  margin: 5px 0 0;
+  color: #555;
+}

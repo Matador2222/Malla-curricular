@@ -1,6 +1,6 @@
 
 const API_BASE_URL = window.location.hostname.includes("github.io")
-  ? "back-end-malla-universidad-production.up.railway.app"
+  ? "https://back-end-malla-universidad.up.railway.app/api"
   : "http://localhost:3000/api";
   
 fetch(`${API_BASE_URL}/malla/1`)

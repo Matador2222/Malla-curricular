@@ -6,19 +6,22 @@ const API_BASE_URL = window.location.hostname.includes("github.io")
 document.getElementById("carrera").addEventListener("change", function () {
   const idCarrera = this.value;
 
-  fetch(`${API_BASE_URL}/malla/${idCarrera}`)
-    .then(res => {
-      if (!res.ok) throw new Error("Error al conectar con el backend");
-      return res.json();
-    })
-    .then(data => {
-      mostrarMalla(data);
-    })
-    .catch(err => {
-      console.error("Error al cargar la malla:", err);
-      document.getElementById("contenedor").innerHTML = `<p style="color:red;"> No se pudo cargar la malla. Intenta más tarde.</p>`;
-    });
+  fetch(`${API_BASE_URL}/malla/1`)
+  .then(res => {
+    if (!res.ok) throw new Error("Error al conectar con el backend");
+    return res.json();
+  })
+  .then(data => {
+    mostrarMalla(data);
+  })
+  .catch(err => {
+    console.error("Error al cargar la malla:", err);
+    document.getElementById("contenedor").innerHTML = `<p style="color:red;"> No se pudo cargar la malla. Intenta más tarde.</p>`;
+  });
+
 });
+
+
 
 
 fetch(`${API_BASE_URL}/carreras`)

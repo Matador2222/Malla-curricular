@@ -1,7 +1,7 @@
 
 const API_BASE_URL = window.location.hostname.includes("github.io")
-  ? "https://tu-backend.railway.app/api"
-  : "back-end-malla-universidad-production.up.railway.app";
+  ? "back-end-malla-universidad-production.up.railway.app"
+  : "http://localhost:3000/api";
   
 fetch(`${API_BASE_URL}/malla/1`)
   .then(res => {

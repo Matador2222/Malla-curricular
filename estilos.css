@@ -85,36 +85,23 @@ body {
 
 
 .tarjeta {
-  width: 200px;               
-  height: 120px;              
-  padding: 10px;
-  margin: 5px;
-  box-sizing: border-box;
+  background-color: white;
   border: 1px solid #ccc;
+  padding: 14px 10px;
   border-radius: 8px;
-  background-color: #fff;
+  font-size: 13px;
   text-align: center;
+  transition: 0.2s;
+  min-height: 55px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   display: flex;
-  flex-direction: column;
-  justify-content: center;    
-  align-items: center;        
-  overflow: hidden;
-}
-
-.tarjeta p {
-  margin: 0;
-  font-size: 14px;
-  word-wrap: break-word;
-}
-
-
-.contenedor-malla {
-  display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
-  
+  line-height: 1.2;
 }
+
+
 .verde {
   background-color: #d4edda !important;
   border: 1px solid #28a745 !important;

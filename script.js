@@ -1,4 +1,8 @@
 
+const API_BASE_URL = window.location.hostname.includes("github.io")
+  ? "https://tu-backend.railway.app/api"
+  : "http://localhost:3000/api";
+  
 const mallaInformatica = [
   { nombre: "Proyecto Cornerstone", semestre: 1, prerrequisitos: [] },
   { nombre: "Pensamiento Computacional", semestre: 1, prerrequisitos: [] },

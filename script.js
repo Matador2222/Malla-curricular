@@ -1,7 +1,7 @@
 
 const API_BASE_URL = window.location.hostname.includes("github.io")
-  ? "https://back-end-malla-universidad.up.railway.app/api"
-  : "http://localhost:3000/api";
+  ? "back-end-malla-universidad-production.up.railway.app"
+  : "http://localhost:3000";
   
 document.getElementById("carrera").addEventListener("change", function () {
   const idCarrera = this.value;
